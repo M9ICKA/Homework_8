@@ -56,6 +56,7 @@ public class FiveTests {
         Configuration.browserSize = "1920x1080";
         open(Configuration.baseUrl);
 
+
 //        WebDriver driver;
 //        driver = WebDriverRunner.getWebDriver();
 //        MainPage mainPage = new MainPage(driver);
