@@ -56,6 +56,7 @@ public class FiveTests {
         Configuration.browserSize = "1920x1080";
         open(Configuration.baseUrl);
 
+        System.out.println("Пробую залить на гит ");
 
 //        WebDriver driver;
 //        driver = WebDriverRunner.getWebDriver();
