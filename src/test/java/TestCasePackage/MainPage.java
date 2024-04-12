@@ -10,26 +10,21 @@ import static com.codeborne.selenide.Selenide.$;
 
 public class MainPage {
 
-    private By buttonSignUpForTheCourse = By.xpath("//td[@data-field = 'buttontitle']");
+    private static By buttonSignUpForTheCourse = By.xpath("//td[@data-field = 'buttontitle']");
 
-    private By directionButtonEnterTheIT = By.xpath
+    private static By directionButtonEnterTheIT = By.xpath
             (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/voitivit']");
 
-    private By directionButtonMarketingAndSales = By.xpath
+    private static By directionButtonMarketingAndSales = By.xpath
             (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/marketing']");
 
-    private By directionButtonSoftSkills = By.xpath
+    private static By directionButtonSoftSkills = By.xpath
             (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/soft-skills']");
 
 
     private WebDriver driver;
 
-    public MainPage(WebDriver driver) throws InterruptedException {
-        this.driver = driver;
-    }
-
-
-    public void clickOnTheSignUpForACourseButton() {
+    public static void clickOnTheSignUpForACourseButton() {
         $(buttonSignUpForTheCourse).click();
     }
 

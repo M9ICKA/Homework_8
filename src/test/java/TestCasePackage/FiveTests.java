@@ -1,15 +1,18 @@
 package TestCasePackage;
 
 
+import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.WebDriverRunner;
+import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
-
 import static com.codeborne.selenide.Browsers.CHROME;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
+
 public class FiveTests {
-//
+    //
 //    @Test
 //    public static void testButtonsRegisterForTheCourse() throws InterruptedException {   //Тест кнопки зарегистрироваться на курс
 //        SoftAssert softAssert = new SoftAssert();
@@ -50,27 +53,25 @@ public class FiveTests {
 //        softAssert.assertAll();
 //    }
     @Test
-    public static void voitiVIt() throws InterruptedException {
-        Configuration.browser = CHROME;
-        Configuration.baseUrl = "https://belhard.academy/";
+    public static void voitiVIt() {
+
+        Configuration.browser = System.getProperty("browser","chrome");
         Configuration.browserSize = "1920x1080";
-        open(Configuration.baseUrl);
+        open("https://belhard.academy/");
+        WebDriver driver;
+        driver = WebDriverRunner.getWebDriver();
+        MainPage mainPage = new MainPage();
+        mainPage.clickTheDirectionButtonEnterToIT();
 
-        System.out.println("Пробую залить на гит ");
+        VoitiVItPage voitiVItPage = new VoitiVItPage();
 
-//        WebDriver driver;
-//        driver = WebDriverRunner.getWebDriver();
-//        MainPage mainPage = new MainPage(driver);
-//        mainPage.clickTheDirectionButtonEnterToIT();
-//
-//        VoitiVItPage voitiVItPage = new VoitiVItPage(driver);
-//
-//        String joinBottom = voitiVItPage.signUpForIntensiveButton().getText();
-//        $(joinBottom).equals("ЗАПИСАТЬСЯ НА ИНТЕНСИВ");
-//        $(voitiVItPage.pageURL()).equals("https://belhard.academy/voitivit");
-//        $(voitiVItPage.getMainTitle()).equals
+        String joinBottom = voitiVItPage.signUpForIntensiveButton().getText();
+
+//        joinBottom.equals("ЗАПИСАТЬСЯ НА ИНТЕНСИВ");
+        $(voitiVItPage.getPageUrl(driver)).shouldHave(Condition.text("https://belhard.academy/voitivit"));
+//        voitiVItPage.getMainTitle().equals
 //                ("Онлайн/офлайн интенсив\n" + "«Как войти в IT или\n" + "как стать IT-специалистом с нуля»");
-    }
+    };
 //    @Test
 //    public static void marketingAndSales() throws InterruptedException {
 //        SoftAssert softAssert = new SoftAssert();
