@@ -1,0 +1,44 @@
+package TestCasePackage;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import javax.swing.*;
+import java.util.concurrent.TimeUnit;
+
+import static com.codeborne.selenide.Selenide.$;
+
+public class MainPage {
+
+    private static By buttonSignUpForTheCourse = By.xpath("//td[@data-field = 'buttontitle']");
+
+    private static By directionButtonEnterTheIT = By.xpath
+            (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/voitivit']");
+
+    private static By directionButtonMarketingAndSales = By.xpath
+            (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/marketing']");
+
+    private static By directionButtonSoftSkills = By.xpath
+            (".//div[@class = 'tn-atom']/a[@href = 'https://belhard.academy/soft-skills']");
+
+
+    private WebDriver driver;
+
+    public static void clickOnTheSignUpForACourseButton() {
+        $(buttonSignUpForTheCourse).click();
+    }
+
+    public void clickTheDirectionButtonEnterToIT() {
+        $(directionButtonEnterTheIT).click();
+    }
+
+    public void clickTheDirectionButtonMarketingAndSales() {
+        $(directionButtonMarketingAndSales).click();
+    }
+
+    public void clickTheDirectionButtonSoftSkills() {
+        $(directionButtonSoftSkills).click();
+    }
+
+
+}
